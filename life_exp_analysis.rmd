@@ -1,7 +1,7 @@
 ---
 title: "STAT-613 - 001"
 author: "Yashar Mansouri"
-date: "1/25/2021"
+date: "`r.Sys.Date()`"
 output: pdf_document
 ---
 
@@ -9,6 +9,30 @@ output: pdf_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 ```{r}
-install.packages("gapminder")
+# install.packages("gapminder")
+library(gapminder)
+library(tidyverse)
+```
+```{r}
+data("gapminder_unfiltered") # loading the data
+
+```
+
+```{r}
+names(gapminder_unfiltered)
+```
+
+```{r}
+gapminder_unfiltered %>% 
+  group_by(year)%>% 
+  filter(lifeExp == max(lifeExp)) %>%
+  ungroup() %>%
+  select(year, country, lifeExp) %>%
+  arrange(year) ->
+  sumdat
+```
+
+```{r}
+sumdat
 ```
 
