@@ -1,0 +1,14 @@
+---
+title: "STAT-613 - 001"
+author: "Yashar Mansouri"
+date: "1/25/2021"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+```{r}
+install.packages("gapminder")
+```
+
