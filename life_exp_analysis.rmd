@@ -24,11 +24,11 @@ names(gapminder_unfiltered)
 
 ```{r}
 gapminder_unfiltered %>% 
-  group_by(year)%>% 
-  filter(lifeExp == max(lifeExp)) %>%
+  group_by(year)%>% # grouping by year
+  filter(lifeExp == max(lifeExp)) %>% # filtering by maximum on life exp
   ungroup() %>%
-  select(year, country, lifeExp) %>%
-  arrange(year) ->
+  select(year, country, lifeExp) %>% #selecting columns
+  arrange(year) -> #arranging
   sumdat
 ```
 
